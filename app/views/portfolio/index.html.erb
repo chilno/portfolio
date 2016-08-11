@@ -9,6 +9,7 @@
                         <li class="active"><a href="#section2">About me</a></li>
                         <li><a href="#section3">Portfolio</a></li>
                         <li><a href="#section4">Contact</a></li>
+                        <li><a target="_blank" href="https://drive.google.com/file/d/0B9QDzsLnwOGLM252ZWt4M0dYaFk/view?usp=sharing">Resume</a></li>
                     </ul>
                 </div>
             </div>
@@ -17,7 +18,7 @@
             <div class="container">
                 <div id="about-me" class="row">
                     <div class="col-sm-8">
-                        <h1>ⴰⵣⵓⵍ! Hi! Salut!<span dir="rtl" style="font-family: Tahoma; font-size:40px;" > أهلاً </span> my name is <br><strong>Nazim Bellahsene</strong></h1> 
+                        <h1>ⴰⵣⵓⵍ! Hi! Salut!<span id="ar" dir="rtl" style="font-family: Tahoma; font-size:40px;" > أهلاً </span> my name is <br><strong>Nazim Bellahsene</strong></h1> 
                     </div>
                     <div id="me" class="col-sm-3"></div>
                 </div>
@@ -25,7 +26,7 @@
         </div>
         <div id="section2">
             <div class="container">
-            <h1>Aspiring Developer</h1>
+            <h1>Full Stack Developer</h1>
             <div class="circle pull-right"></div>
             <p id="text1">Hi, My name is <strong>Nazim</strong>. I'm very <strong>passionate</strong> about <strong>technology</strong>. I love <strong>languages</strong> because they make people achieve and build amazing things and feel the same about <strong>coding</strong> languages. I enjoy <strong>building</strong> and <strong>learning</strong>.</p>
             <p id="text2" class="pull-right">My <strong>goal</strong> in life is to make a positive <strong>contribution</strong> to the <strong>World</strong> that will have an impact on <strong>people</strong>'s lives while having <strong>fun</strong> doing my job.</p>
@@ -36,24 +37,30 @@
                 <h1>My Projects</h1>
                 <div class="row">
                     <div class="col-sm-4 ">
-                        <div id="first" class="well box">
-                            <h2>LastMinutePlan</h2>
-                            <p>App allows users to search for restaurants within reach in a specified amount of time and allowed the users to place reservations at participating restaurants via the OpenTable API.</p>
-                            <p><a class="btn" href="#">View details &raquo;</a></p>
+                        <div  class="well box">
+                        	<img style="width: 460px;" src="/assets/lmp.png">
+                        	<div class="text">
+	                            <h2>LastMinutePlan</h2>
+	                            <p>App allows users to search for restaurants within reach in a specified amount of time and allowed the users to place reservations at participating restaurants via the OpenTable API.
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div id="second" class="well">
-                            <h2>rentMe</h2>
-                            <p>Website grants users the ability to add and rent out their belongings or rent from other users, choose dates, add to cart, and checkout. </p>
-                            <p><a class="btn" href="#">View details &raquo;</a></p>
+                        <div class="well box">
+                        	<img style="width: 460px;" src="/assets/rentme.png">
+                        	<div class="text">
+	                        	<h2>rentMe</h2>
+	                            <p>Website grants users the ability to add and rent out their belongings or rent from other users, choose dates, add to cart, and checkout. </p>
+                        	</div>
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div id="third" class="well">
-                            <h2>StoryHub</h2>
-                            <p>Website grants users the ability to create stories and add snippets either to their own stories or to other users stories. </p>
-                            <p><a class="btn" href="#">View details &raquo;</a></p>
+                        <div class="well box">
+                        	<img src="/assets/storyhub.png">
+                        	<div class="text">
+	                        	<h2>StoryHub</h2>
+	                            <p>Website grants users the ability to create stories and add snippets either to their own stories or to other users stories. </p>
+                        	</div>
                         </div>
                     </div>
                 </div>
@@ -62,16 +69,18 @@
         <div id="section4">
             <div class="container">
                 <h1>Contact Me</h1>
+                <div id="notif"></div>
                 <form id="form" class="col-sm-6 pull-left">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                     <label for="name">Your name</label><br>
-                    <input id="name" type="text" placeholder="got a name?" required><br>
+                    <input id="name" type="text" placeholder="got a name?" name="msg[name]" required><br>
                     <label for="email">Your email </label><br>
-                    <input id="email" type="email" placeholder="got an email?" required><br>
+                    <input id="email" type="email" placeholder="got an email?" name="msg[email]" required><br>
                     <label for="subject">Subject</label><br>
-                    <input id="subject" type="text" placeholder="What?" required><br>
+                    <input id="subject" type="text" placeholder="What?" name="msg[subject]" required><br>
                     <label>Your message</label><br>
-                    <textarea placeholder="Type here..." required></textarea><br>
-                    <input id="button" type="submit">
+                    <textarea placeholder="Type here..." name="msg[conetent]" required></textarea><br>
+                    <input id="button" type="submit" value="Send">
                 </form>
                 <div id="links" class="col-sm-6 pull-right">
                     <a title="Facebook" href="#"><%= image_tag "128-facebook.png" %></a>
