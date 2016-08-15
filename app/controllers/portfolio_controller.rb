@@ -1,5 +1,6 @@
 class PortfolioController < ApplicationController
   def index
+  	puts '-----------------------------------------'
   end
 
   def create
@@ -9,7 +10,7 @@ class PortfolioController < ApplicationController
   		sms = @client.messages.create(
 		  from: '+16509841259',
 		  to: '+14154251131',
-		  body: 'Got a New Message from '+ msg_params['name']+' saying "'+msg_params['conetent']
+		  body: 'Message from '+ msg_params['name']+', Subject '+msg_params['subject']+', Saying "'+msg_params['conetent']+'"'
 		)
   		render json: { :success =>  "Your Message was Successfully sent! I'll be in touch!"}
   	else
