@@ -3,6 +3,8 @@ $(document).ready(function(){
     var swap2 ="white";
     var swap;
     
+    //
+
     $("#navbar-btn").click(function() {
         var scrollPosition = $(document).scrollTop();
         swap = swap2;
@@ -19,12 +21,18 @@ $(document).ready(function(){
         }
     });
 
+    //Smooth Scrolling
+
     $('a.scroll').click(function(e){
-        var section = $(this).attr('href');
         e.preventDefault();
-        $('html, body').animate({scrollTop: $(section).offset().top }, 800);
-        return true;
-        
+        var section = $(this).attr('href');
+        $('html, body').animate({scrollTop: $(section).offset().top-50 }, 800);
+    });
+
+    $('a').click(function(e){
+        if($(this).attr('href') == ""){
+            e.preventDefault();
+        }
     });
 
     $('#links a').hover(function(){
@@ -33,6 +41,8 @@ $(document).ready(function(){
         $(this).siblings().find('img').removeClass('filter');
     });
     
+    //Navbar Effects
+
     $(document).scroll(function(){
         /*swap1 = $(".glyphicon").css("color");
         swap2 ="white";*/
@@ -63,5 +73,11 @@ $(document).ready(function(){
                 }, 5000);
             }
         });
+    });
+
+    $('ul.nav > li').click(function (e) {
+        e.preventDefault();
+        $('ul.nav > li').removeClass('active');
+        $(this).addClass('active');
     });
 });
