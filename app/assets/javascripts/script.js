@@ -19,6 +19,14 @@ $(document).ready(function(){
         }
     });
 
+    $('a.scroll').click(function(e){
+        var section = $(this).attr('href');
+        e.preventDefault();
+        $('html, body').animate({scrollTop: $(section).offset().top }, 800);
+        return true;
+        
+    });
+
     $('#links a').hover(function(){
         $(this).siblings().find('img').addClass('filter');
     }, function(){
@@ -43,7 +51,6 @@ $(document).ready(function(){
     $("#form").submit(function(e){
         e.preventDefault();
         $.post('/create', $(this).serialize(), function(data){
-            console.log(data);
             if(data.errors){
                 for(err in data.errors){
                     $('body').append("<div class='alert alert-danger' style='position: fixed; top:50px; left:0; width:100%;'><a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Error! </strong>"+data.errors[err]+"</div>");
