@@ -58,21 +58,19 @@ $(document).ready(function(){
 
     //Ajax form submit
 
-    $("#form").submit(function(e){
-        e.preventDefault();
-        $.post('/create', $(this).serialize(), function(data){
-            if(data.errors){
-                for(err in data.errors){
-                    $('body').append("<div class='alert alert-danger' style='position: fixed; top:50px; left:0; width:100%;'><a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Error! </strong>"+data.errors[err]+"</div>");
-                }
-            }else{
-                $('body').append("<div class='alert alert-success' style='position: fixed; top:50px; left:0; width:100%;'><a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success! </strong>"+ data.success +"</div>");
-                $("#form")[0].reset();
-                setTimeout(function(){
-                    $(".alert").fadeOut();
-                }, 5000);
+    e.preventDefault();
+    $.post('/create', $(this).serialize(), function(data){
+        if(data.errors){
+            for(err in data.errors){
+                $('body').append("<div class='alert alert-danger' style='position: fixed; top:50px; left:0; width:100%;'><a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Error! </strong>"+data.errors[err]+"</div>");
             }
-        });
+        }else{
+            $('body').append("<div class='alert alert-success' style='position: fixed; top:50px; left:0; width:100%;'><a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success! </strong>"+ data.success +"</div>");
+            $("#form")[0].reset();
+            setTimeout(function(){
+                $(".alert").fadeOut();
+            }, 5000);
+        }
     });
 
     $('ul.nav > li').click(function (e) {
