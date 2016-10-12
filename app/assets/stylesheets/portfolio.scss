@@ -4,7 +4,7 @@
 }
 
 body{
-    background: url("sahara.jpg") no-repeat center center fixed;
+    background: image-url("sahara.jpg") no-repeat center center fixed;
     background-size: cover;
     font-family: "Raleway", sans-serif;
 }
@@ -46,7 +46,7 @@ a {
 }
 
 #me {
-    background: url("me1.png")no-repeat;
+    background: image-url("me1.png")no-repeat;
     background-size: 200px;
     height: 280px;
     width: 200px;
@@ -55,7 +55,7 @@ a {
 }
 
 #me:hover {
-    background-image: url("mehov2.png");
+    background-image: image-url("mehov2.png");
 }
 
 #section1{
