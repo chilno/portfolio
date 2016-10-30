@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'portfolio#index'
   post '/create' => 'portfolio#create'
 
+  match '*path' => redirect('/'), via: :get
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -24,10 +24,27 @@ a {
     transition: 0.5s;
 }
 .custom > li > a:hover {
-    background-color: transparent;
+    background-color: #cc7a00;
     color: chocolate;
     font-size: 120%;
     transition: 0.5s;
+}
+
+.custom > li > a:focus {
+    background-color: #cc7a00;
+    color: chocolate;
+}
+
+.scroll:hover{
+    color: blue;
+}
+
+.box-link:hover {
+    text-decoration: none;
+}
+
+.active {
+    background-color: #cc7a00;
 }
 
 .clear{
@@ -155,7 +172,7 @@ a {
 	-ms-transition: all 1s ease-in;
 	-o-transition: all 1s ease-in;
 	-webkit-transition: all 1s ease-in;
-	width: 200%;
+	/*width: 200%;*/
 	height: auto;
 	top: 0px;
 	left: 0px;
@@ -165,8 +182,9 @@ a {
 .box:hover > img{
 	-webkit-filter: brightness(30%);
 	position: relative;
-	top: -10px;
-	left: -100px;
+    width: 110%;
+	top: -40px;
+	/*left: -100px;*/
 }
 
 .box:hover > .text{
@@ -213,7 +231,7 @@ textarea {
     background-color: #37495B;
     color: aliceblue;
     text-align: right;
-    padding-right: 20px;
+    padding: 10px 20px 0 0;
     margin-top: 30px;
     overflow: hidden;
 }

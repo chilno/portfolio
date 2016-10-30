@@ -1,4 +1,17 @@
 $(document).ready(function(){
+
+    var lines = ["    _/      _/                      _/                        _/_/_/ "
+                ,"   _/_/    _/    _/_/_/  _/_/_/_/      _/_/_/  _/_/          _/    _/"
+                ,"  _/  _/  _/  _/    _/      _/    _/  _/    _/    _/        _/_/_/   "
+                ," _/    _/_/  _/    _/    _/      _/  _/    _/    _/        _/    _/  "
+                ,"_/      _/    _/_/_/  _/_/_/_/  _/  _/    _/    _/    _/  _/_/_/     "
+                ];
+
+    for( var i in lines){
+        console.log(lines[i]);
+    }
+
+
     var swap1 = $(".glyphicon").css("color");
     var swap2 ="white";
     var swap;
@@ -77,8 +90,8 @@ $(document).ready(function(){
 
     $('ul.nav > li').click(function (e) {
         //e.preventDefault();
-        $('ul.nav > li').removeClass('active');
-        $(this).addClass('active');
+        $('ul.nav > li').children().removeClass('active');
+        $(this).children().addClass('active');
     });
 
     //Google Analytics
